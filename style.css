@@ -1,0 +1,284 @@
+/* Reset dasar untuk konsistensi */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #f3f3f3;
+    background-color: #1e1e2f;
+
+    /* Efek masuk untuk seluruh body */
+    opacity: 0;
+    animation: bodyFade 1.2s ease forwards;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #3d2b87;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+
+    /* Animasi masuk */
+    opacity: 0;
+    transform: translateY(-40px);
+    animation: slideDown 1s ease forwards;
+}
+
+nav .main a {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav .menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+nav .menu a {
+    color: #dcdcff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+/* Hover menu navbar */
+nav .menu a:hover {
+    background-color: #5945b5;
+    color: #fff;
+}
+
+nav .contact-btn {
+    background-color: #26a69a;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+/* Hover tombol contact */
+nav .contact-btn:hover {
+    background-color: #33c4b7;
+}
+
+/* Section */
+section {
+    padding: 100px 2rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* Efek masuk setiap section */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease forwards;
+}
+
+/* HOME SECTION */
+#home {
+    background-color: #2e2b4f;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    padding: 100px 2rem;
+
+    /* Animasi masuk khusus home */
+    animation-delay: 0.2s;
+}
+
+#home .text-content {
+    flex: 1;
+    margin-right: 2rem;
+
+    /* Slide-left */
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideLeft 1.2s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* FOTO PROFIL */
+.profile-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    transition: 0.3s ease;
+
+    /* Zoom masuk */
+    opacity: 0;
+    transform: scale(0.7);
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.6s;
+}
+
+/* Hover foto profil */
+.profile-img:hover {
+    transform: scale(1.05);
+}
+
+/* Section Warna */
+#about {
+    background-color: #283a5e;
+}
+
+#projects {
+    background-color: #224f43;
+}
+
+#contact {
+    background-color: #2b3a4f;
+}
+
+/* PROJECT TABLE */
+#projects table {
+    display: inline-block;
+    text-align: center;
+    margin-top: 20px;
+
+    /* Fade-In Up */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 1.2s ease forwards;
+    animation-delay: 0.5s;
+}
+
+/* Gambar Project */
+.project-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.3s ease;
+
+    /* Zoom masuk */
+    opacity: 0;
+    transform: scale(0.8);
+    animation: zoomIn 1.2s ease forwards;
+    animation-delay: 0.7s;
+}
+
+/* Hover gambar project */
+.project-img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* PROJECT LINK */
+#projects a {
+    display: block;
+    margin-top: 10px;
+    color: #6ab8ff;
+    text-decoration: none;
+    transition: 0.3s ease;
+
+    /* Fade */
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 0.9s;
+}
+
+/* Hover link project */
+#projects a:hover {
+    color: #9cd3ff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #3d2b87;
+    color: #fff;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+
+    /* Fade masuk */
+    opacity: 0;
+    animation: fadeIn 1.2s ease forwards;
+    animation-delay: 1s;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    nav .menu {
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    section {
+        padding: 120px 1rem 2rem;
+    }
+
+    #home {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #home .text-content {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+}
+
+/* ============================= */
+/* ANIMASI KEYFRAMES             */
+/* ============================= */
+
+@keyframes bodyFade {
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideLeft {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes zoomIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
