@@ -163,11 +163,11 @@ section p {
 }
 
 #about h1, #skill h1 {
-    color: #fff;
+    color: #000000;
 }
 
 #about p, #skill p {
-    color: #f0f0f0;
+    color: #202020;
 }
 
 /* Projects Section */
@@ -516,3 +516,4 @@ footer {
         margin: 1rem 0;
     }
 }
+
